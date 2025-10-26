@@ -6,8 +6,6 @@ const cors=require("cors")
 const app=express()
 app.use(cors())
 app.use(express.json())
-
-mongoose.connect("mongodb+srv://snehamariya:mariyasneha@cluster0.xbw5gxo.mongodb.net/community?retryWrites=true&w=majority&appName=Cluster0")
 app.get("/posts",async(request,response)=>{
     const posts=await Post.find();
     response.json(posts)
