@@ -2,6 +2,11 @@ const express=require("express")
 const mongoose=require("mongoose")
 const cors=require("cors")
 
+require('dotenv').config();
+
+
+const uri = process.env.MONGO_URI;
+console.log("Mongo URI loaded:", uri ? "✅ Loaded" : "❌ Not found");
 
 const app=express()
 app.use(cors())
